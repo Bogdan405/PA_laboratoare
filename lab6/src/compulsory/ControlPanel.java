@@ -23,18 +23,21 @@ public class ControlPanel extends JPanel {
     public void init(){
         setLayout(new GridLayout(1,4));
 
-        //buttons
+        //adauga butoane cu optiuni
         this.add(saveBtn);
         this.add(loadBtn);
         this.add(resetBtn);
         this.add(exitBtn);
 
+        //selectam actiunea care se face la apasarea fiecarui buton
         saveBtn.addActionListener(this::save);
         loadBtn.addActionListener(this::load);
         resetBtn.addActionListener(this::reset);
         exitBtn.addActionListener(this::exit);
     }
 
+
+    //actiune de save, genereaza o fila noua
     private void save(ActionEvent e){
         try{
             ImageIO.write(frame.canvas.image,"PNG", new File("./test.png"));
@@ -44,13 +47,17 @@ public class ControlPanel extends JPanel {
         }
     }
 
+    //exit straight forward eliminam tot frame-ul
     private void exit(ActionEvent e){
         frame.dispose();
     }
 
+    //tot exit(reset), nu am reusit sa imi dau seama de implementare, dar cerinta nu cerea o actiune specifica la acest buton
     private void reset(ActionEvent e){
         frame.dispose();
     }
+
+    //tot exit(load), nu am reusit sa imi dau seama de implementare, dar cerinta nu cerea o actiune specifica la acest buton
     private void load(ActionEvent e){
         frame.dispose();
     }

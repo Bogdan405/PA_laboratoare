@@ -15,13 +15,13 @@ public class DrawingPanel extends JPanel {
     BufferedImage image;
     Graphics2D graphics;
 
-    public DrawingPanel(MainFrame frame) {
+    public DrawingPanel(MainFrame frame) { // clasa de desen
         this.frame = frame;
         createOffscreenImage();
         init();
     }
 
-    private void createOffscreenImage() {
+    private void createOffscreenImage() { // continutul dinafara clasei de desen va fi alb
         image = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
         graphics = image.createGraphics();
         graphics.setColor(Color.WHITE);
@@ -34,25 +34,22 @@ public class DrawingPanel extends JPanel {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
-                drawShape(e.getX(),e.getY());
+                drawShape(e.getX(),e.getY());//la apasarea mause, se deseneaza figura cu proprietatile selectate
                 repaint();
             }
         });
     }
 
-    private void drawShape(int x, int y){
-        int radius = (int) (Math.random()%45+22);
-        int sides = frame.getSidesFigure();
+    private void drawShape(int x, int y){//desenam o figura, setant fiecare proprietaate
         Random rand = new Random();
-        Color color = new Color(rand.nextFloat(),rand.nextFloat(),rand.nextFloat());
+        int radius = (int)(rand.nextFloat()*100); //dimensiunea aleatoare
+        int sides = frame.getSidesFigure();//Laturile conform inputului (cerinta ca unul dintre inputuri sa fie folosit la desen)
+        Color color = new Color(rand.nextFloat(),rand.nextFloat(),rand.nextFloat());//culoare aleatoare RGB
         graphics.setColor(color);
-        graphics.fill(new RegularPolygon (x,y,radius,sides));
+        graphics.fill(new RegularPolygon (x,y,radius,sides));//functia de desen poligon regulat asa cum este prezentata la laborator in PDF
 
     }
 
-    @Override
-    public void update(Graphics g){//update will do nothing no more
-    }
 
     @Override
     protected void paintComponent(Graphics g) {

@@ -20,18 +20,19 @@ public class ConfigPanel extends JPanel {
         sidesField = new JSpinner(new SpinnerNumberModel(0, 0, 100, 1));
         sidesField.setValue(6);
 
-        colorCombo = new JComboBox<Color>();
+        colorCombo = new JComboBox<Color>(); // nu am mai folosit asta in final, poate ulterior la optional saptamna urmatoare
         colorCombo.addItem(Color.blue);
         colorCombo.addItem(Color.black);
 
 
         add(sidesLabel);
-        add(sidesField);
+        add(sidesField);//avem label si input pentru numarul de laturi al figurii desenate
+        //add(colorCombo);
 
     }
 
     public int getSides(){
-        return (int) sidesField.getValue();
+        return (int) sidesField.getValue();//pentru imput utilizator
     }
 
 

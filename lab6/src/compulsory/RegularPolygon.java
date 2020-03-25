@@ -2,7 +2,7 @@ package compulsory;
 
 import java.awt.*;
 
-public class RegularPolygon extends Polygon {
+public class RegularPolygon extends Polygon {//am folosit implementarea dupa PDF lab6
 
     public RegularPolygon(int x0, int y0, int radius, int sides){
         double alpha = 2 * Math.PI / sides;
