@@ -75,7 +75,7 @@ public class ControlPanel extends JPanel {
                 // si cursul, presupun ca nu mi-am dat seama ce trebuia sa caut
                 //Deoarece nu a iesit cu clasa instantiata, am ales sa creez un buton pentru fiecare input pentru
                 //a vedea ce clase sunt instatiate, cele scrise gresit nu se vor instatia (erori in terminal, aplicatia continua)
-                // butonul va aparea indiferent de input (exceptand input vid sau identic cu inputul precedent).
+                // butonul va aparea indiferent de input (exceptand input vid).
 
 
             }
